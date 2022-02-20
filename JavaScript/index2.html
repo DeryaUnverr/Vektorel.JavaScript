@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <input id="name" type="text" name="name" value="" />
+        <input id="lastname" type="text" name="lastname" value="" />
+    </div>
+    <table id="tbl">
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+        </tr>
+        <tr>
+            <td>Cihan</td>
+            <td>Çakır</td>
+        </tr>
+    </table>
+    <button>
+        Kişi Ekle
+    </button>
+    <button>
+        Kişi Ekle
+    </button>
+    <button>
+        Kişi Ekle
+    </button>
+    <button>
+        Kişi Ekle
+    </button>
+    <script>
+        var b = document.getElementsByTagName('button');
+        for (var item of b) {
+            item.addEventListener('click', () =>
+            {
+                alert("BTN CLİCK");
+            })
+        }
+        console.log(b);
+        var table = document.getElementById('tbl');
+        var button = document.getElementById('btn');
+        button.addEventListener('click', () => {
+            var name = document.getElementById('name').value;
+            var lastname = document.getElementById('lastname').value;
+            //var tr = document.createElement('tr');
+            //var td = document.createElement('td');
+            //td.innerText = "Ali";
+            //tr.appendChild(td);
+            //var td2 = document.createElement('td');
+            //td2.innerText = "Veli";
+            //tr.appendChild(td2);
+            //table.appendChild(tr);
+
+            var result = `<tr>
+                                            <td>${name}</td>
+                                            <td>${lastname}</td>
+                                      </tr>`;
+            table.innerHTML += result;
+
+
+        });
+    </script>
+</body>
+</html>
